@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFinder - Manual Clothing Fit Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">FitFinder</span>
+                <br>
+                <span class="hero-subtitle">Manual Clothing Fit Analyzer</span>
+            </h1>
+            <p class="hero-description">
+                Compare your measurements with any clothing product online. Paste a product link, enter your size stats, and get instant fit analysis - perfect, loose, or tight fit with recommendations.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Product</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Paste Link</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Get Fit</div>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#analyzer" class="btn-primary-large">
+                    <span class="btn-icon">📏</span>
+                    Start Analyzing
+                </a>
+                <p class="security-note">
+                    🔒 No data stored • Everything processed locally • Works with any retailer
+                </p>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="measurement-card">
+                <div class="measurement-inputs">
+                    <div class="input-group">
+                        <label>Chest:</label>
+                        <input type="number" placeholder="42" min="20" max="80">
+                        <span>inches</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Waist:</label>
+                        <input type="number" placeholder="34" min="20" max="70">
+                        <span>inches</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Hips:</label>
+                        <input type="number" placeholder="41" min="20" max="80">
+                        <span>inches</span>
+                    </div>
+                </div>
+                <div class="url-input">
+                    <span class="url-icon">🔗</span>
+                    <input type="url" placeholder="Paste product link here... (e.g., nike.com/shirt)">
+                </div>
+                <button class="analyze-btn">
+                    <span class="btn-icon">🔍</span>
+                    Analyze Fit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Enter Measurements</h3>
+                    <p>Input your personal body measurements in inches. Chest, waist, hips, shoulders, arm length, inseam - whatever you have.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Paste Product Link</h3>
+                    <p>Works with any clothing retailer. Copy the URL of the shirt, pants, or shoes you want to buy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Get Fit Analysis</h3>
+                    <p>Get instant feedback: perfect fit, loose fit, or tight fit, plus personalized recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="analyzer-section" id="analyzer">
+        <div class="container">
+            <h2 class="section-title">Fit Analyzer</h2>
+            <div class="analyzer-form">
+                <div class="form-section">
+                    <h3>Your Measurements</h3>
+                    <div class="measurement-grid">
+                        <div class="measurement-input">
+                            <label for="chest">Chest (inches)*</label>
+                            <input type="number" id="chest" placeholder="42.5" required>
+                        </div>
+                        <div class="measurement-input">
+                            <label for="waist">Waist (inches)*</label>
+                            <input type="number" id="waist" placeholder="34.0" required>
+                        </div>
+                        <div class="measurement-input">
+                            <label for="hips">Hips (inches)</label>
+                            <input type="number" id="hips" placeholder="41.5">
+                        </div>
+                        <div class="measurement-input">
+                            <label for="shoulders">Shoulders (inches)</label>
+                            <input type="number" id="shoulders" placeholder="18.0">
+                        </div>
+                        <div class="measurement-input">
+                            <label for="sleeve">Sleeve Length (inches)</label>
+                            <input type="number" id="sleeve" placeholder="34.0">
+                        </div>
+                        <div class="measurement-input">
+                            <label for="inseam">Inseam (inches)</label>
+                            <input type="number" id="inseam" placeholder="32.0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Product Information</h3>
+                    <div class="product-inputs">
+                        <div class="input-group">
+                            <label for="product-url">Product URL*</label>
+                            <input type="url" id="product-url" placeholder="https://example.com/product/shirt" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="clothing-type">Clothing Type*</label>
+                            <select id="clothing-type" required>
+                                <option value="">Select type</option>
+                                <option value="shirt">Shirt/T-Shirt</option>
+                                <option value="pants">Pants/Jeans</option>
+                                <option value="shorts">Shorts</option>
+                                <option value="skirt">Skirt</option>
+                                <option value="dress">Dress</option>
+                                <option value="jacket">Jacket/Coat</option>
+                                <option value="shoes">Shoes/Sneakers</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="product-size">Product Size (e.g., M, 32W x 32L, US 9)</label>
+                            <input type="text" id="product-size" placeholder="Medium or 32W x 32L">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button id="manual-input-btn" class="btn-secondary">
+                        <span class="btn-icon">📝</span>
+                        Manual Measurement Entry
+                    </button>
+                    <button id="analyze-btn" class="btn-primary">
+                        <span class="btn-icon">🔍</span>
+                        Analyze Fit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results-section" id="results-section">
+        <div class="container">
+            <h2 class="section-title">Fit Analysis Results</h2>
+            <div class="results-card">
+                <div class="results-header">
+                    <div id="fit-indicator" class="fit-indicator">
+                        <div class="fit-status">
+                            <span id="fit-icon">⚖️</span>
+                            <h3 id="fit-title">Analyzing...</h3>
+                            <p id="fit-description">Please wait while we analyze your fit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-section">
+                        <h4>Your Measurements</h4>
+                        <div id="user-measurements" class="measurements-list">
+                            <!-- User measurements will be populated here -->
+                        </div>
+                    </div>
+                    <div class="comparison-section">
+                        <h4>Product Measurements</h4>
+                        <div id="product-measurements" class="measurements-list">
+                            <!-- Product measurements will be populated here -->
+                        </div>
+                    </div>
+                    <div class="comparison-section">
+                        <h4>Fit Assessment</h4>
+                        <div id="fit-differences" class="measurements-list">
+                            <!-- Fit analysis will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendations-section">
+                    <h4>Recommendations</h4>
+                    <div id="recommendations" class="recommendations-list">
+                        <!-- Recommendations will be populated here -->
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="new-analysis-btn" class="btn-secondary">
+                        <span class="btn-icon">🔄</span>
+                        New Analysis
+                    </button>
+                    <button id="save-results-btn" class="btn-primary">
+                        <span class="btn-icon">💾</span>
+                        Save Results
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manual Input Modal -->
+    <div id="manual-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Manual Product Measurement Entry</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Enter the measurements from the product's size chart. Only fill in the measurements that are available:</p>
+                <div class="measurement-grid">
+                    <div class="measurement-input">
+                        <label for="prod-chest">Chest/Bust (inches)</label>
+                        <input type="number" id="prod-chest" placeholder="40.2">
+                    </div>
+                    <div class="measurement-input">
+                        <label for="prod-waist">Waist (inches)</label>
+                        <input type="number" id="prod-waist" placeholder="32.5">
+                    </div>
+                    <div class="measurement-input">
+                        <label for="prod-hips">Hips (inches)</label>
+                        <input type="number" id="prod-hips" placeholder="38.7">
+                    </div>
+                    <div class="measurement-input">
+                        <label for="prod-shoulders">Shoulders (inches)</label>
+                        <input type="number" id="prod-shoulders" placeholder="16.8">
+                    </div>
+                    <div class="measurement-input">
+                        <label for="prod-sleeve">Sleeve Length (inches)</label>
+                        <input type="number" id="prod-sleeve" placeholder="25.2">
+                    </div>
+                    <div class="measurement-input">
+                        <label for="prod-inseam">Inseam (inches)</label>
+                        <input type="number" id="prod-inseam" placeholder="30.3">
+                    </div>
+                    <div class="measurement-input">
+                        <label for="prod-length">Length (inches)</label>
+                        <input type="number" id="prod-length" placeholder="28.5">
+                    </div>
+                    <div class="measurement-input">
+                        <label for="prod-foot-length">Foot Length (inches)</label>
+                        <input type="number" id="prod-foot-length" placeholder="10.2">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-cancel-btn" class="btn-secondary">Cancel</button>
+                <button id="modal-analyze-btn" class="btn-primary">Analyze Fit</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>FitFinder</h3>
+                    <p>Manual Clothing Fit Analyzer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy-first</a>
+                    <a href="#help">Help</a>
+                    <a href="#about">About</a>
+                </div>
+                <div class="footer-social">
+                    <span>🌟 Smart Fit Analysis</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitFinder. All analysis done locally in your browser.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="fit-analyzer.js"></script>
+</body>
+</html>

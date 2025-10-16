@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Scan - Perfect Fit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
+    <div class="scan-page">
+        <div class="scan-header">
+            <a href="index.html" class="back-btn">
+                <span class="back-arrow">←</span>
+                Back to Home
+            </a>
+            <h1 class="scan-title">AI Body Scan</h1>
+            <p class="scan-subtitle">Stand in front of your camera for 15 seconds</p>
+        </div>
+
+        <div class="scan-container">
+            <div class="camera-section">
+                <div class="camera-frame">
+                    <video id="camera" autoplay playsinline muted></video>
+                    <canvas id="overlay-canvass" style="display: none;"></canvas>
+                    <div class="scan-overlay">
+                        <div class="scan-instructions">
+                            <div class="instruction-card"
+                                 style="display: block;">
+                                <div class="progress-circle">
+                                    <span class="progress-text">1/3</span>
+                                </div>
+                                <h3>Step 1: Face the Camera</h3>
+                                <p>Stand 3-4 feet away and look straight at your webcam</p>
+                                <div class="instruction-icons">
+                                    <span class="instruction-icon">📏</span>
+                                </div>
+                            </div>
+                            <div class="instruction-card">
+                                <div class="progress-circle">
+                                    <span class="progress-text">2/3</span>
+                                </div>
+                                <h3>Step 2: Assume Pose</h3>
+                                <p>Raise your arms slightly and stand naturally</p>
+                                <div class="instruction-icons">
+                                    <span class="instruction-icon">🙋</span>
+                                </div>
+                            </div>
+                            <div class="instruction-card">
+                                <div class="progress-circle">
+                                    <span class="progress-text">3/3</span>
+                                </div>
+                                <h3>Step 3: AI Processing</h3>
+                                <p>Our AI analyzes your proportions - just relax!</p>
+                                <div class="instruction-icons">
+                                    <span class="instruction-icon">🤖</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scan-progressBar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <button id="start-scan-btn" class="btn-scan-primary">
+                            <span class="btn-icon">▶</span>
+                            Start AI Scan
+                        </button>
+                    </div>
+                </div>
+                <div class="scan-info">
+                    <div class="info-item">
+                        <span class="info-icon">👀</span>
+                        <div>
+                            <strong>Privacy Protected</strong>
+                            <p>Images processed locally, never stored</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⚡</span>
+                        <div>
+                            <strong>Lightning Fast</strong>
+                            <p>Complete scan in under 15 seconds</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎯</span>
+                        <div>
+                            <strong>Industry Leading</strong>
+                            <p>95% accuracy rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section" id="results-section" style="display: none;">
+                <div class="results-card">
+                    <div class="success-header">
+                        <div class="success-icon">🎉</div>
+                        <h2>Scan Complete!</h2>
+                        <p>Your body measurements have been calculated</p>
+                    </div>
+                    <div class="measurements-grid">
+                        <div class="measurement-item">
+                            <span class="measurement-label">Chest</span>
+                            <span class="measurement-value" id="chest-measurement">-</span>
+                        </div>
+                        <div class="measurement-item">
+                            <span class="measurement-label">Waist</span>
+                            <span class="measurement-value" id="waist-measurement">-</span>
+                        </div>
+                        <div class="measurement-item">
+                            <span class="measurement-label">Hips</span>
+                            <span class="measurement-value" id="hip-measurement">-</span>
+                        </div>
+                        <div class="measurement-item">
+                            <span class="measurement-label">Shoulders</span>
+                            <span class="measurement-value" id="shoulder-measurement">-</span>
+                        </div>
+                        <div class="measurement-item">
+                            <span class="measurement-label">Sleeve Length</span>
+                            <span class="measurement-value" id="sleeve-measurement">-</span>
+                        </div>
+                        <div class="measurement-item">
+                            <span class="measurement-label">Inseam</span>
+                            <span class="measurement-value" id="inseam-measurement">-</span>
+                        </div>
+                    </div>
+                    <div class="actions-section">
+                        <a href="sizes.html" class="btn-continue">
+                            <span class="btn-icon">🛍️</span>
+                            Get Size Recommendations
+                        </a>
+                        <button id="retake-scan-btn" class="btn-retake">
+                            <span class="btn-icon">🔄</span>
+                            Retake Scan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading-modal" id="loading-modal" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h3>Analyzing Your Body...</h3>
+                <p>Our AI is processing your measurements. This takes about 10 seconds.</p>
+                <div class="loading-steps">
+                    <div class="loading-step active">
+                        <span class="step-icon">📊</span>
+                        Calculating proportions
+                    </div>
+                    <div class="loading-step">
+                        <span class="step-icon">🏷️</span>
+                        Determining size correlates
+                    </div>
+                    <div class="loading-step">
+                        <span class="step-icon">📈</span>
+                        Generating recommendations
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scan.js"></script>
+</body>
+</html>
