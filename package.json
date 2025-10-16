@@ -4,7 +4,7 @@
   "private": true,
   "description": "Perfect Fit - Privacy-first clothing fit checker (static site)",
   "scripts": {
-    "start": "npx http-server -p 3000"
+    "start": "node node_modules/.bin/http-server -p 3000"
   },
   "author": "",
   "license": "MIT",
