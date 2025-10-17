@@ -95,6 +95,133 @@
         </div>
     </section>
 
+    <!-- Demo Analysis Section -->
+    <section class="demo-section" id="demo-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Fit Analysis Demonstration</h2>
+            <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1rem;">🎯 Live Fit Analysis Example</h3>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem;">See how the system compares your measurements with product specifications</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <!-- User Measurements -->
+                    <div style="background: var(--gradient-blue); color: white; padding: 2rem; border-radius: 16px;">
+                        <h4 style="text-align: center; margin-bottom: 1.5rem;">👤 Your Measurements</h4>
+                        <div id="demo-user-measurements" style="display: grid; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">
+                                <span>Chest:</span>
+                                <span id="demo-chest">42"</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">
+                                <span>Waist:</span>
+                                <span id="demo-waist">34"</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">
+                                <span>Shoulders:</span>
+                                <span id="demo-shoulders">18"</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                <span>Sleeve:</span>
+                                <span id="demo-sleeve">34"</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Measurements -->
+                    <div style="background: var(--gradient-purple); color: white; padding: 2rem; border-radius: 16px;">
+                        <h4 style="text-align: center; margin-bottom: 1.5rem;">👕 Product Size (Nike Shirt M)</h4>
+                        <div id="demo-product-measurements" style="display: grid; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">
+                                <span>Chest:</span>
+                                <span id="demo-prod-chest">41"</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">
+                                <span>Waist:</span>
+                                <span id="demo-prod-waist">32.5"</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">
+                                <span>Shoulders:</span>
+                                <span id="demo-prod-shoulders">18.2"</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                <span>Sleeve:</span>
+                                <span id="demo-prod-sleeve">34.5"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Results -->
+                <div style="background: var(--background); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;">
+                    <h4 style="text-align: center; margin-bottom: 2rem; color: var(--text-primary);">📊 Fit Analysis Results</h4>
+
+                    <!-- Overall Fit -->
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <div id="demo-fit-result" style="font-size: 2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 0.5rem;">
+                            👍 GOOD FIT
+                        </div>
+                        <div style="color: var(--text-secondary);">
+                            Average difference: <span id="demo-avg-diff">1.1"</span>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Comparison -->
+                    <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: white; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <div>
+                                <div style="font-weight: 600; color: var(--text-primary);">Chest</div>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Your 42" vs Product 41"</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-weight: bold; color: var(--warning-color);">+1.0"</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Slight loose</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: white; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <div>
+                                <div style="font-weight: 600; color: var(--text-primary);">Shoulders</div>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Your 18" vs Product 18.2"</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-weight: bold; color: var(--info-color);">+0.2"</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Perfect fit</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: white; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <div>
+                                <div style="font-weight: 600; color: var(--text-primary);">Sleeve Length</div>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Your 34" vs Product 34.5"</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-weight: bold; color: var(--info-color);">+0.5"</div>
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Perfect fit</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div style="background: var(--success-color); color: white; padding: 2rem; border-radius: 12px;">
+                        <h4 style="margin-bottom: 1rem; text-align: center;">💡 Recommendations</h4>
+                        <div id="demo-recommendations" style="display: grid; gap: 0.5rem;">
+                            <div>👍 Good fit! This size should work well for you.</div>
+                            <div>There might be slight room for adjustment.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button onclick="runDemoAnalysis()" style="background: var(--gradient-blue); color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer;">
+                        🔄 Try Different Measurements
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="analyzer-section" id="analyzer">
         <div class="container">
             <h2 class="section-title">Fit Analyzer</h2>
@@ -295,6 +422,14 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 FitFinder. All analysis done locally in your browser.</p>
+                <p>
+                    <a href="?demo=true" style="color: #93c5fd;">View Demo Analysis</a> |
+                    <a href="javascript:void(0)" onclick="demoFitAnalysis()" style="color: #93c5fd;">Run Console Demo</a> |
+                    <a href="javascript:void(0)" onclick="testFitAnalysis()" style="color: #93c5fd;">Fill Test Form</a>
+                </p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">
+                    💡 Having issues? Open browser console and run <code style="background: rgba(255,255,255,0.1); padding: 2px 4px; border-radius: 3px;">testFitAnalysis()</code> to fill the form with test data
+                </p>
             </div>
         </div>
     </footer>
